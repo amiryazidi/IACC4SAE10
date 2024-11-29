@@ -1,0 +1,10 @@
+<p>login works!</p>
+<label> login</label>
+<input type="text" [formControl]="login">
+
+
+<label> password</label>
+<input type="text" [formControl]="pwd">
+
+
+<button [disabled]="login.invalid">save</button>
