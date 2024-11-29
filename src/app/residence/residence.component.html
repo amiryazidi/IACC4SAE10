@@ -1,0 +1,31 @@
+<p>residence works!</p>
+<div><input type="text" placeholder="search by adress" [(ngModel)]="searchAdresse"></div>
+
+<div *ngFor="let r of filterResidence()">
+
+    {{r.name}}
+    <img src="{{r.image}}" alt="image" width="100">
+    <button class="btn btn-info" (click)="showLoc(r.address)"> show location</button>
+    <button class="btn btn-primary" (click)="like(r)">  Like </button>
+
+    <div>
+        <p *ngIf="r.address !== 'inconnu'">
+            {{r.address}}
+        </p>
+    </div>
+
+    <div [ngSwitch]="r.status">
+        <p *ngSwitchCase="'Disponible'">✅</p>
+        <p *ngSwitchCase="'Vendu'">❌</p>
+        <p *ngSwitchCase="'En Construction'">🛠️</p>
+    </div>
+</div>
+
+
+<h3>Liste Favoris</h3>
+<ul *ngFor="let l of listFavorites">
+
+    <li>
+        {{l.name}}
+    </li>
+</ul>

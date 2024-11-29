@@ -1,0 +1,26 @@
+ {{title}}
+
+<input type="text" placeholder="search by age" [(ngModel)]="AgeMax">
+<table border="1" class="table">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>age</th>
+        <th>email</th>
+    </tr>
+    <tr *ngFor="let user of user">
+        <ng-container *ngIf="user.age < AgeMax  || AgeMax==null">
+            <td> {{user.id}}</td>
+            <td> {{user.name}}</td>
+            <td> {{user.age}}</td>
+            <td> {{user.email}}</td>
+        </ng-container>
+    </tr>
+</table>
+
+<button (click)="show()" class="btn btn-primary"> save </button>
+
+
+<p [style.backgroundColor]="color">
+    propertyBinding
+</p>
