@@ -1,0 +1,25 @@
+{
+  "residences": [
+    {
+      "id": "fbe9",
+      "name": "test",
+      "address": "aaaaaaaaaaa",
+      "image": "../../assets/images/R1.jpg",
+      "status": "Available"
+    },
+    {
+      "id": "9",
+      "name": "test",
+      "address": "aaaaaaaaaaa",
+      "image": "../../assets/images/R1.jpg",
+      "status": "Available"
+    },
+    {
+      "id": "b81b",
+      "name": "test",
+      "address": "tttatatatatt",
+      "image": "../../assets/images/R1.jpg",
+      "status": "Available"
+    }
+  ]
+}

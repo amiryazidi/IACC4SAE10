@@ -1,10 +1,56 @@
 <p>login works!</p>
 <label> login</label>
 <input type="text" [formControl]="login">
-
-
 <label> password</label>
 <input type="text" [formControl]="pwd">
+<button [disabled]="login.invalid || pwd.invalid">save</button>
 
 
-<button [disabled]="login.invalid">save</button>
+<br>
+
+<h1> Login </h1>
+<form [formGroup]="formLogin">
+
+    <label> login</label>
+    <input type="text" class="form-control" formControlName="login" placeholder="enter login">
+
+    <div class="alert alert-danger" *ngIf="formLogin.controls['login'].invalid && formLogin.controls['login'].touched">
+        <p *ngIf="formLogin.controls['login'].hasError('required')">login doit etre obligatoire</p>
+        <p *ngIf="formLogin.controls['login'].hasError('minlength')">login minlength 5 </p>
+    </div>
+
+    <label> password</label>
+    <input type="text" class="form-control" formControlName="pwd" placeholder="enter pwd">
+
+    <div class="alert alert-danger" *ngIf="formLogin.controls['pwd'].invalid && formLogin.controls['pwd'].touched">
+        <p *ngIf="formLogin.controls['pwd'].hasError('required')">passwor doit etre obligatoire</p>
+        <p *ngIf="formLogin.controls['pwd'].hasError('pattern')">password doit respecter [a-zA-Z0-9]*</p>
+    </div>
+
+    <label> Email</label>
+    <input type=" text " class="form-control " formControlName="email" placeholder="enter Email ">
+
+    <div class="alert alert-danger " *ngIf="formLogin.controls['email'].invalid && formLogin.controls[ 'email'].touched ">
+        <p *ngIf="formLogin.controls['email'].hasError('required')">email doit etre obligatoire</p>
+        <p *ngIf="formLogin.controls['email'].hasError('email')">email doit respecter les normes</p>
+    </div>
+
+    <label> Phone</label>
+    <input type="text " class="form-control " formControlName="phone" placeholder="enter phone ">
+
+    <div class="alert alert-danger " *ngIf="formLogin.controls['phone'].invalid && formLogin.controls[ 'phone'].touched ">
+        <p *ngIf="formLogin.controls['phone'].hasError('required')">phone doit etre obligatoire</p>
+        <p *ngIf="formLogin.controls['phone'].hasError('pattern')">phone 8 chiffres</p>
+    </div>
+
+    <label> Adresse</label>
+    <input type="text " class="form-control " formControlName="address" placeholder="enter adresse ">
+
+
+    <div class="alert alert-danger " *ngIf="formLogin.controls['address'].invalid && formLogin.controls[ 'address'].touched ">
+        <p *ngIf="formLogin.controls['address'].hasError('required')">adresse doit etre obligatoire</p>
+
+    </div>
+
+    <button [disabled]="formLogin.invalid " (click)="save() " class="btn btn-info ">save</button>
+</form>
