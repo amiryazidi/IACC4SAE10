@@ -13,14 +13,13 @@ export class ResidenceComponent {
   listResidences:Residence[]=[]
 
   ngOnInit(){
-    this.rs.getAllResidence().subscribe({
-      next: (data) => this.listResidences = data,
-      error : (err)=> console.log(err),
-    }
-  
-    )
+  //this.listResidences=this.rs.listResidences
+
+  this.rs.getAllResidences().subscribe(
+    res=> this.listResidences=res,
+  )
   }
-  
+
    constructor (private rs:ResidenceService) {}
 
    showLoc(adress : string){
@@ -43,5 +42,9 @@ export class ResidenceComponent {
       (this.searchAdresse.toLowerCase());
     } );
   }
-
+ supp(id:number){
+  this.rs.deleteResidence(id).subscribe(
+    ()=>this.ngOnInit()
+  )
+ }
 }

@@ -26,11 +26,12 @@ export class AddResidenceComponent {
   }
   addResidence() {
     if (this.residenceForm.valid) {
+      // this.rs.listResidences.push(this.residenceForm.value);
+      // this.rt.navigate(['/residence']);
+      // console.log('Residence data:', this.residenceForm.value);
       this.rs.addResidence(this.residenceForm.value).subscribe(
-       ()=> this.rt.navigateByUrl('/residence')
+        ()=> this.rt.navigateByUrl('/residence')
       );
-      
-      console.log('Residence data:', this.residenceForm.value);
      
     } else {
       console.log('Form is invalid');

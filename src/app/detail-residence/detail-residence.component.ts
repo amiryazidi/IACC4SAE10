@@ -19,14 +19,9 @@ residence!: Residence
 
     this.id =  this.act.snapshot.params['id'];
     //this.residence= this.rs.listResidences.find(residence => residence.id == this.id)!;
-
-this.rs.getResidenceById(this.id).subscribe(
-(r)=>{
-this.residence=r;
-}
-
-)
-
+    this.rs.getResidenceById(this.id).subscribe(
+      (res: Residence) => this.residence = res
+    );
 
    }
 }

@@ -31,6 +31,7 @@ import { AddProductComponent } from './add-product/add-product.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

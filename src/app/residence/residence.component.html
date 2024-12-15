@@ -8,6 +8,7 @@
     <img src="{{r.image}}" alt="image" width="100">
     <button class="btn btn-info" (click)="showLoc(r.address)"> show location</button>
     <button class="btn btn-primary" (click)="like(r)">  Like </button>
+    <button class="btn btn-danger" (click)="supp(r.id)">  Delete </button>
     <button class="btn btn-secondary" [routerLink]="['/details',r.id]">  Details </button>
 
     <div>
