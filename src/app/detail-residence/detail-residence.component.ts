@@ -9,19 +9,22 @@ import { ResidenceService } from '../services/residence.service';
   styleUrls: ['./detail-residence.component.css']
 })
 export class DetailResidenceComponent {
-id!:number;
-residence!: Residence
+  id!: number;
+  residence!: Residence
 
 
-   constructor(private act: ActivatedRoute,private rs:ResidenceService) {}
+  constructor(private act: ActivatedRoute, private rs: ResidenceService) { }
 
-   ngOnInit(){
-
-    this.id =  this.act.snapshot.params['id'];
+  ngOnInit() {
+    this.id = this.act.snapshot.params['id'];
     //this.residence= this.rs.listResidences.find(residence => residence.id == this.id)!;
     this.rs.getResidenceById(this.id).subscribe(
       (res: Residence) => this.residence = res
     );
 
-   }
+  }
+
+  navigateToLocation() {
+    window.open(`https://www.google.com/maps/place/${this.residence.address}`, '_blank')
+  }
 }

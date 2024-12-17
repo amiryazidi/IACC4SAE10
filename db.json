@@ -6,6 +6,13 @@
       "address": "nabeulaaaaadd",
       "image": "../../assets/images/R1.jpg",
       "status": "Available"
+    },
+    {
+      "id": "aa65",
+      "name": "test",
+      "address": "aaaaaaaaaaa",
+      "image": "../../assets/images/R1.jpg",
+      "status": "Available"
     }
   ]
 }
