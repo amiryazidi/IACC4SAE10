@@ -15,20 +15,23 @@ export class ResidenceService {
      {id:4,"name": "El Anber","address":"inconnu", "image":"../../assets/images/R4.jpg", status: "En Construction"}
    ];
   constructor(private http:HttpClient) { }
-
+    urlApi = 'http://localhost:3000/residences'
 
   getAllResidences(): Observable <Residence[]>{
-    return this.http.get<Residence[]>('http://localhost:3000/residences');
+    return this.http.get<Residence[]>(this.urlApi);
   }
   getResidenceById(id:number): Observable <Residence>{
-    return this.http.get<Residence>('http://localhost:3000/residences/'+id);
+    return this.http.get<Residence>(this.urlApi+'/'+id);
   }
 
   addResidence(res:Residence): Observable <Residence>{
-    return this.http.post<Residence>('http://localhost:3000/residences',res);
+    return this.http.post<Residence>(this.urlApi,res);
   }
 
   deleteResidence(id:number):Observable <Residence>{
-    return this.http.delete<Residence>('http://localhost:3000/residences/'+id);
+    return this.http.delete<Residence>(this.urlApi +'/'+id);
+  }
+  UpdateResidence(rs:Residence , id:number) : Observable <Residence>{
+    return this.http.put<Residence>(this.urlApi+'/'+id,rs)
   }
 }

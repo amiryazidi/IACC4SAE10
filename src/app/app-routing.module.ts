@@ -14,6 +14,7 @@ const routes: Routes = [
   {path:'login' , component:LoginComponent},
   {path:'addRes' , component:AddResidenceComponent},
   {path:'details/:id' , component:DetailResidenceComponent}, // route parametre
+  {path:'updateR/:id' , component:AddResidenceComponent}, // route parametre
   {path:'**' , component: NotFoundComponent}, // path not found
 
 ];

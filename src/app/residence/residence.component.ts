@@ -47,4 +47,5 @@ export class ResidenceComponent {
     ()=>this.ngOnInit()
   )
  }
+ 
 }

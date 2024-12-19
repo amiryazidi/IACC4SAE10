@@ -41,7 +41,9 @@
                     <button class="btn btn-outline-info btn-sm" [routerLink]="['/details', residence.id]">
                     Details
                 </button>
-
+                    <button class="btn btn-outline-info btn-sm" [routerLink]="['/updateR', residence.id]">
+                  update
+              </button>
                     <button class="btn btn-outline-danger btn-sm" (click)="supp(residence.id)">
                     Delete
                 </button>

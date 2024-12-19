@@ -13,6 +13,13 @@
       "address": "aaaaaaaaaaa",
       "image": "../../assets/images/R1.jpg",
       "status": "Available"
+    },
+    {
+      "name": "amirupdate",
+      "address": "testtststsstts",
+      "image": "../../assets/images/R1.jpg",
+      "status": "Available",
+      "id": "4c18"
     }
   ]
 }
